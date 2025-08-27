@@ -1,5 +1,11 @@
 # README for Cuisine Compass
 
+Displays list of restaurants, with accompanying detail screen.
+
+Restaurant cards are sorted by best deals first.
+
+Search filter functionality includes filter by partial name, and cuisines
+
 ## Development notes
 
 Initially I created the project using Android Studio - File / New / New Project / Empty Activity
