@@ -30,7 +30,7 @@ retaurant details.
 It shows on my phone in Dark Theme, but this can be changed on your phone to make it look more like
 the screenshots.
 
-Added some tests for view model and repository.
+Added some tests for view model and repository, with a little help from AI
 
 Note that the base of the url for loading restaurants is defined in app/build.gradle.kts
 
