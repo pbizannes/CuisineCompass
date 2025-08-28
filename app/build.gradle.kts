@@ -59,6 +59,12 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.converter.gson)
     implementation(libs.gson)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.coil.compose)
+    implementation(libs.material)
+    implementation(libs.androidx.compose.material3.adaptive.navigation)
+    implementation(libs.androidx.compose.material3.adaptive)
+    implementation(libs.androidx.compose.material3.adaptive.layout)
 
     // Hilt
     implementation(libs.androidx.hilt.navigation.compose)
