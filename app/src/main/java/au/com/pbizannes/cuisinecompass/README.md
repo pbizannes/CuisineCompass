@@ -23,7 +23,7 @@ the screenshots.
 
 Added some tests for view model and repository.
 
-
+Note that the base of the url for loading restaurants is defined in app/build.gradle.kts
 
 ### Things Still to be Done
 
