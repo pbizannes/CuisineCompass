@@ -14,3 +14,17 @@ I initially created models simply by pasting the output from the endpoint into G
 "Generate models for the given JSON". I made these parcelable, so I get the benefits of the material3
 list-detail panel which requires gives you a list/detail screen and correctly remembers between
 orientation changes by parceling objects. 
+
+
+I added a use case to show how it would be used, but it is a bit un-necesary for this simple project.
+
+It shows on my phone in Dark Theme, but this can be changed on your phone to make it look more like
+the screenshots.
+
+Added some tests for view model and repository.
+
+### Things Still to be Done
+
+- Many of the strings are hard-coded directly and not used from the resources.
+- This was done quickly. I might revisit using retrofit if I was looking at this again.
+- I would add more tests with more time. Eg: a test for the use case.

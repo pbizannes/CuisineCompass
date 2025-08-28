@@ -59,7 +59,6 @@ fun RestaurantInfoCard(
                         .data(displayableItem.imageUrl)
                         .crossfade(true)
                         .build(),
-                    // Use a generic placeholder for food
                     placeholder = painterResource(R.drawable.clipart_restaurant_location),
                     error = painterResource(R.drawable.clipart_restaurant_location),
                     contentDescription = "Image of ${displayableItem.name}",

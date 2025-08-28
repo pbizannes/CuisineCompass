@@ -1,4 +1,4 @@
-package au.com.pbizannes.cuisinecompass.presentation.restaurant_list
+package au.com.pbizannes.cuisinecompass.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -21,7 +21,7 @@ data class RestaurantListUiState(
 )
 
 @HiltViewModel
-class RestaurantListViewModel @Inject constructor(
+class RestaurantViewModel @Inject constructor(
     private val getRestaurantsUseCase: GetRestaurantsUseCase
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(RestaurantListUiState())
@@ -31,16 +31,11 @@ class RestaurantListViewModel @Inject constructor(
     private var allRestaurants: List<Restaurant> =
         sampleRestaurants
 
-    init {
-        loadRestaurants()
-    }
-
     // In a real app, this function would fetch data from a repository (network/database)
     fun loadRestaurants() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            // Simulate network delay or data fetching
-            // kotlinx.coroutines.delay(1000)
+
             val restaurantResponse = getRestaurantsUseCase.invoke()
             if (restaurantResponse.isSuccess) {
                 allRestaurants = restaurantResponse.getOrNull() ?: listOf()
@@ -64,15 +59,7 @@ class RestaurantListViewModel @Inject constructor(
 
     fun onSearchQueryChanged(query: String) {
         _uiState.update { it.copy(searchQuery = query) }
-        // In a real app, you might want to debounce this operation to avoid excessive filtering
-        // while the user is typing.
-        // viewModelScope.launch {
-        //     delay(300) // example debounce time
-        //     _uiState.update {
-        //         it.copy(restaurants = filterRestaurants(allRestaurants, query))
-        //     }
-        // }
-        // For simplicity in this example, direct update:
+
         _uiState.update {
             it.copy(restaurants = filterRestaurants(allRestaurants, query))
         }

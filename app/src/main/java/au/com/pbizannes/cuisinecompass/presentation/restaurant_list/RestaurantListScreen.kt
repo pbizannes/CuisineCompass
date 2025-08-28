@@ -30,8 +30,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import au.com.pbizannes.cuisinecompass.domain.models.Restaurant
 import au.com.pbizannes.cuisinecompass.domain.use_case.GetRestaurantsUseCase
+import au.com.pbizannes.cuisinecompass.presentation.RestaurantListUiState
+import au.com.pbizannes.cuisinecompass.presentation.RestaurantViewModel
 import au.com.pbizannes.cuisinecompass.presentation.components.RestaurantTopAppBar
-import au.com.pbizannes.cuisinecompass.presentation.models.sampleRestaurantCards
 import au.com.pbizannes.cuisinecompass.presentation.models.sampleRestaurants
 import au.com.pbizannes.cuisinecompass.ui.theme.CuisineCompassTheme
 
@@ -126,16 +127,12 @@ val getRestaurantsUseCase: GetRestaurantsUseCase = object : GetRestaurantsUseCas
 }
 
 // --- Previews ---
-@Preview(showBackground = true, name = "Food Discovery Screen")
+@Preview(showBackground = true, name = "Restaurant List Screen")
 @Composable
 fun RestaurantListScreenPreview() {
     CuisineCompassTheme {
-        // Provide a ViewModel with sample data for a more complete preview
-        val previewViewModel = RestaurantListViewModel(getRestaurantsUseCase)
-        // Manually update state for preview if needed, or ensure init loads sample data
-        // For simplicity, we assume the ViewModel's init {} loads sample data or the sample is directly used.
-        // If ViewModel requires real async, previewing empty/loading states is easier.
-        // Here, let's just use the VM that has sample data in its constructor.
+        val previewViewModel = RestaurantViewModel(getRestaurantsUseCase)
+
         RestaurantListScreen(uiState = RestaurantListUiState())
     }
 }
