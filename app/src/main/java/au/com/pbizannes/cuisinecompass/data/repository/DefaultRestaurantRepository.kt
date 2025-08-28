@@ -1,4 +1,4 @@
-package au.com.pbizannes.cuisinecompass.data
+package au.com.pbizannes.cuisinecompass.data.repository
 
 import au.com.pbizannes.cuisinecompass.data.source.remote.RestaurantService
 import au.com.pbizannes.cuisinecompass.domain.models.Restaurant

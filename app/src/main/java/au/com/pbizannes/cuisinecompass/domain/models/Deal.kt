@@ -10,26 +10,26 @@ data class Deal(
     val objectId: String,
 
     @SerializedName("discount")
-    val discount: String, // Keep as String, or use custom TypeAdapter for Int/Double
+    val discount: String,
 
     @SerializedName("dineIn")
-    val dineIn: String, // Keep as String, or use custom TypeAdapter for Boolean
+    val dineIn: String,
 
     @SerializedName("lightning")
-    val lightning: String, // Keep as String, or use custom TypeAdapter for Boolean
+    val lightning: String,
 
     @SerializedName("open")
-    val openTime: String? = null, // Optional, so nullable
+    val openTime: String? = null,
 
     @SerializedName("close")
-    val closeTime: String? = null, // Optional, so nullable
+    val closeTime: String? = null,
 
     @SerializedName("start")
-    val startTime: String? = null, // Optional, for "Kekou" example
+    val startTime: String? = null,
 
     @SerializedName("end")
-    val endTime: String? = null, // Optional, for "Kekou" example
+    val endTime: String? = null,
 
     @SerializedName("qtyLeft")
-    val quantityLeft: String // Keep as String, or use custom TypeAdapter for Int
+    val quantityLeft: String
 ) : Parcelable

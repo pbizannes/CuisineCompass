@@ -11,4 +11,6 @@ I created the CoroutinesModule (I probably won't use all those dispatchers, unle
 extended, but just in case), RetrofitModule and RestaurantService.
 
 I initially created models simply by pasting the output from the endpoint into Gemini and asking it
-"Generate models for the given JSON". 
+"Generate models for the given JSON". I made these parcelable, so I get the benefits of the material3
+list-detail panel which requires gives you a list/detail screen and correctly remembers between
+orientation changes by parceling objects. 

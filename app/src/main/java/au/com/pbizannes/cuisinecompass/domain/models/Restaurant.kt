@@ -22,7 +22,7 @@ data class Restaurant(
     val cuisines: List<String>,
 
     @SerializedName("imageLink")
-    val imageLink: String?, // Marked as nullable
+    val imageLink: String?,
 
     @SerializedName("open")
     val openTime: String,
