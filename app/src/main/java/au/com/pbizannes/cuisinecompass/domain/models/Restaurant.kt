@@ -1,7 +1,10 @@
 package au.com.pbizannes.cuisinecompass.domain.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Restaurant(
     @SerializedName("objectId")
     val objectId: String,
@@ -29,4 +32,4 @@ data class Restaurant(
 
     @SerializedName("deals")
     val deals: List<Deal>
-)
+) : Parcelable

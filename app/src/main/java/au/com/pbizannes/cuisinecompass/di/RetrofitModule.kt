@@ -1,6 +1,7 @@
 package au.com.pbizannes.cuisinecompass.di
 
 import au.com.pbizannes.cuisinecompass.BuildConfig
+import au.com.pbizannes.cuisinecompass.data.source.remote.RestaurantService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,4 +24,8 @@ object RetrofitModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideRestaurantService(retrofit: Retrofit): RestaurantService = retrofit.create(RestaurantService::class.java)
 }
