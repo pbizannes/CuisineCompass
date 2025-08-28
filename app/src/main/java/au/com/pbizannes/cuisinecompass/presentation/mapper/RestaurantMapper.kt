@@ -28,7 +28,11 @@ object RestaurantMapper {
     }
 
     fun toPresentation(restaurant: Restaurant): DisplayableRestaurant {
-        val restaurantDeals = restaurant.deals.map { deal ->
+        val restaurantDeals = restaurant.deals
+            .sortedByDescending { deal ->
+                deal.discount.toInt()
+            }
+            .map { deal ->
             RestaurantDeal(
                 id = deal.objectId,
                 discountText = "${deal.discount}% off",

@@ -16,7 +16,9 @@ list-detail panel which requires gives you a list/detail screen and correctly re
 orientation changes by parceling objects. 
 
 
-I added a use case to show how it would be used, but it is a bit un-necesary for this simple project.
+I added a use case to get the restaurant list and sort by the best deal. There is also sorting
+done in the Mapper so the best deal is shown in the restaurant list and is sorted in the
+retaurant details.
 
 It shows on my phone in Dark Theme, but this can be changed on your phone to make it look more like
 the screenshots.
@@ -24,6 +26,8 @@ the screenshots.
 Added some tests for view model and repository.
 
 Note that the base of the url for loading restaurants is defined in app/build.gradle.kts
+
+
 
 ### Things Still to be Done
 
